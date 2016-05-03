@@ -50,7 +50,7 @@ namespace nuTestBorje.Controllers
             }
         }
 
-        //
+        //TODO: här skulle det förmodligen passa med redirect som Admin...
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -72,7 +72,10 @@ namespace nuTestBorje.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-            return View(model);
+            //return View(model); // skickar vidare användaren till index 
+            //TODO: Hit jag vill att man ska skickas efter att ha loggat in. Vet inte hur inlogg förändras, eller att model måste vara i view. 
+            return RedirectToAction("Index", "UrlModels");
+            
         }
 
         //

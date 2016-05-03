@@ -7,9 +7,11 @@ namespace nuTestBorje.Models
 {
     public class HeadModel
     {
-        public List<UrlModel> Url = new List<UrlModel>();
-        public List<ImgModel> Img = new List<ImgModel>();
-        public List<ChartModel> Chart = new List<ChartModel>();
-        public List<VidModel> Vid = new List<VidModel>();
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public UrlModel UrlSlide { get; set; }
+        public ImgModel ImgSlide { get; set; }
+        public VidModel VidSlide { get; set; }
+        public ChartModel ChartSlide { get; set; }
     }
 }
